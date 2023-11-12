@@ -1,4 +1,4 @@
-const apiKey = "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";
+const apiKey = "write a secret key here";
 
 const inputKeywords = document.getElementById('input-keywords'),
     imgsCont = document.getElementById('imgs'),
