@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <title>AI Images Generator</title>
+</head>
+
+<body class="d-flex  p-3">
+    <div class=" main-section container text-center p-4 shadow rounded-3 ">
+        <!-- ?=================  Data =============== -->
+        <h1 class=" main-title text-light display-1 mt-2 mb-3">AI Images Generator</h1>
+        <p class="main-info text-light fs-5">Ai image generator allows you to generate images based off of a custom
+            text input. <br>
+            This allows you to custom create art which has never been seen before!
+        </p>
+
+        <!-- ?=================  INPUT OR PROMPET =============== -->
+        <div class="input-group mt-5 mb-5 p-2 w-75  prompt rounded-3 mx-auto">
+            <input id="input-keywords" type="text" class="form-control text-light input-prompt"
+                placeholder="ex: A cute baby sea otter" aria-label="keywords" aria-describedby="button-addon2">
+            <button class="btn btn-prompt" type="button" onclick="generateImages()">Generate</button>
+        </div>
+        <!-- ?=================  IMAGES GENERATED =============== -->
+
+        <div id="spinner" class="spinner-border text-light d-none" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div id="imgs" class=" imaged-generated row g-2 ">
+            <div class="img-card  col-sm-4  p-2 ">
+                <div class="img-overlay rounded-2"></div>
+            </div>
+            <div class="img-card col-sm-4   p-2 ">
+                <div class="img-overlay rounded-2"></div>
+            </div>
+            <div class=" img-card col-sm-4  p-2 ">
+                <div class="img-overlay rounded-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

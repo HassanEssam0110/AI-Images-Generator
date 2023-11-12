@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+:root {
+  --main-color: #04283a;
+  --btn-color: #046987;
+  --text-colot: #f8f9fa;
+  --border-style: 1px solid rgba(255, 255, 255, 0.3);
+}
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #020f16;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--btn-color);
+}
+h1 {
+  font-family: "Amatic sc";
+}
+body {
+  background: linear-gradient(#0001, #0003), url("../images/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flow-root;
+  background-attachment: fixed;
+}
+.main-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: var(--border-style);
+}
+.prompt {
+  background-color: transparent;
+  border: var(--border-style);
+}
+.input-prompt {
+  background-color: transparent;
+  border: none;
+}
+.input-prompt::placeholder {
+  color: var(--text-colot);
+}
+.input-prompt:focus,
+.input-prompt:active {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.btn-prompt {
+  color: var(--text-colot);
+  background-color: var(--btn-color);
+}
+.btn-prompt:hover {
+  background-color: var(--main-color);
+  color: var(--text-colot);
+}
+.img-gen {
+  border: var(--border-style);
+}
+.img-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../images/bg-card.png");
+  height: 35vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: var(--border-style);
+}
