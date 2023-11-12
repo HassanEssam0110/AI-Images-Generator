@@ -1,5 +1,5 @@
-const baseURL = 'https://api.openai.com/v1/images/generations',
-    apiKey = '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';
+const baseURL = 'https://api.openai.com/v1/images/generations';
+const    apiKey = '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';
 
 const inputKeywords = document.getElementById('input-keywords'),
     imgsCont = document.getElementById('imgs'),
