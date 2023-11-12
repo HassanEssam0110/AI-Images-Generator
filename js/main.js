@@ -1,24 +1,9 @@
-const baseURL = 'https://api.openai.com/v1/images/generations';
-const apiKey = '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';
+const apiKey = "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";
 
 const inputKeywords = document.getElementById('input-keywords'),
     imgsCont = document.getElementById('imgs'),
     spinner = document.getElementById('spinner')
 
-const infoObj = {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`
-    },
-    body: JSON.stringify({
-        // "model": "dall-e-3",
-        "prompt": inputKeywords.value,
-        "n": 3,
-        "size": "512x512"
-        // "size": "1024x1024"
-    })
-}
 
 
 alertify.set('notifier', 'position', 'top-center');
@@ -29,14 +14,30 @@ const generateImages = async () => {
         try {
             clearImages();
             showSpinner();
-            const res = await fetch(baseURL, infoObj)
+
+            const infoObj = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    // "model": "dall-e-3",
+                    "prompt": inputKeywords.value,
+                    "n": 3,
+                    "size": "512x512"
+                    // "size": "1024x1024"
+                })
+            }
+
+            const res = await fetch('https://api.openai.com/v1/images/generations', infoObj)
 
             if (res.status === 200) {
                 const data = await res.json();  //parse data
                 renderImages(data.data);
             } else {
                 removeSpinner();
-                alertify.notify('Wait 5 mins,Too many requests.', 'error', 5);
+                alertify.notify(`${res.status} sorry error occurred`, 'error', 5);
             }
 
         } catch (err) {
